@@ -13,16 +13,15 @@ using namespace std;
 
 int main() {
     // Declare variables
-    int counter2;
     int userNum1Int;
     int userNum2Int;
     int greatestNum;
     int productList;
+    int lcm;
 
     // set variables to numbers
     int product = 0;
     int product2 = 1;
-    int counter1 = 1;
 
     // declare variables to strings
     std::string userNum1Str;
@@ -38,6 +37,7 @@ int main() {
     std::cin >> userNum2Str;
     std::cout << "\n";
 
+    list<int> commonList{};
     list<int> product2List{};
     list<int> product1List{};
 
@@ -55,22 +55,33 @@ int main() {
         } else {
             greatestNum = userNum2Int;
         }
-        for (counter2 = 1; counter2 <= greatestNum; counter2++) {
+        // for loop to calculate all the products of the
+        // from the counter to the greatestNum using userNum2Int
+        for (int counter2 = 1; counter2 <= greatestNum; counter2++) {
             // Asks the user for a number to add to sum
             product2 = userNum2Int * counter2;
-            list<int>::iterator it = product2List.begin();
-            advance(it, counter2);
-            *it = product2;
-            std::cout << *it << endl;
+            product2List.push_back(product2);
             product2List.sort();
+            // for loop to calculate all the products of the
+            // from the counter to the greatestNum using userNum1Int
+            for (int counter1 = 1; counter1 <= greatestNum; counter1++) {
+                product = userNum1Int * counter1;
+                product1List.push_back(product);
+                product1List.sort();
+            }
+            // To check if product2 is in product1List
+            bool findListProduct = (std::find(product1List.begin(),
+            product1List.end(), product2) != product1List.end());
+            // if it is in product1List then add product2 to commonList
+            if (findListProduct == true) {
+                commonList.push_back(product2);
+            } else {
+                continue;
+            }
         }
-        for (counter1 = 1; counter1 <= greatestNum; counter1++) {
-            product = userNum1Int * counter1;
-            list<int>::iterator it2 = product1List.begin();
-            advance(it2, counter1);
-            *it2 = product;
-            std::cout << *it2 << endl;
-            product1List.sort();
-        }
+        std::cout << "If nothing is appearing wait for it to load\n";
+        // Displays the first number of commonList
+        std::cout << "The Lowest Common Multiple of " << userNum2Int << " and "
+        << userNum1Int << " is "<< commonList.front() << "\n";
     }
 }
