@@ -46,6 +46,7 @@ int main() {
         userNum1Int = std::stoi(userNum1Str);
         userNum2Int = std::stoi(userNum2Str);
     } catch (const std::exception) {
+        std::cout << "Please a valid integer\n";
     }
 
     // If statement to check if totalInt is a invalid input
