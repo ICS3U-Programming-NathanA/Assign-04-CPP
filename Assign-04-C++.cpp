@@ -58,14 +58,18 @@ int main() {
             for (int counter2 = 1; counter2 <= greatestNum; counter2++) {
                 // Asks the user for a number to add to sum
                 product2 = userNum2Int * counter2;
+                // Add the product2 to the product2List
                 product2List.push_back(product2);
                 product2List.sort();
                 // while loop to calculate all the products of the
                 // from the counter to the greatestNum using userNum1Int
                 while (counter1 <= greatestNum) {
+                    // Asks the user for a number to add to sum
                     product = userNum1Int * counter1;
+                    // Add the product to the product1List
                     product1List.push_back(product);
                     product1List.sort();
+                    // increments the counter1
                     counter1++;
                 }
                 // To check if product2 is in product1List
