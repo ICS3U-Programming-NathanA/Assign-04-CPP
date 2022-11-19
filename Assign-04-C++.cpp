@@ -22,6 +22,7 @@ int main() {
     // set variables to numbers
     int product = 0;
     int product2 = 1;
+    int counter1 = 1;
 
     // declare variables to strings
     std::string userNum1Str;
@@ -61,10 +62,11 @@ int main() {
                 product2List.sort();
                 // for loop to calculate all the products of the
                 // from the counter to the greatestNum using userNum1Int
-                for (int counter1 = 1; counter1 <= greatestNum; counter1++) {
+                while (counter1 <= greatestNum) {
                     product = userNum1Int * counter1;
                     product1List.push_back(product);
                     product1List.sort();
+                    counter1++;
                 }
                 // To check if product2 is in product1List
                 bool findListProduct = (std::find(product1List.begin(),
