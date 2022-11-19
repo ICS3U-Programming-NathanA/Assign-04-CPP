@@ -27,13 +27,13 @@ int main() {
     std::string userNum1Str;
     std::string userNum2Str;
 
-    // Asks the user for the amount of numbers they want to add together
-    std::cout << "Enter the amount of numbers to enter: ";
+    // Asks the user to enter a positive integer
+    std::cout << "Enter a positive integer: ";
     std::cin >> userNum1Str;
     std::cout << "\n";
 
-    // Asks the user for the amount of numbers they want to add together
-    std::cout << "Enter the amount of numbers to enter: ";
+    // Asks the user to enter another positive integer
+    std::cout << "Enter another positive integer: ";
     std::cin >> userNum2Str;
     std::cout << "\n";
 
