@@ -60,7 +60,7 @@ int main() {
                 product2 = userNum2Int * counter2;
                 product2List.push_back(product2);
                 product2List.sort();
-                // for loop to calculate all the products of the
+                // while loop to calculate all the products of the
                 // from the counter to the greatestNum using userNum1Int
                 while (counter1 <= greatestNum) {
                     product = userNum1Int * counter1;
