@@ -49,7 +49,7 @@ int main() {
     }
 
     // If statement to check if totalInt is a invalid input
-    if (userNum1Int > 0 % userNum2Int > 0) {
+    if (userNum1Int > 0 && userNum2Int > 0) {
         if (userNum1Int > userNum2Int) {
             greatestNum = userNum1Int;
         } else {
@@ -83,5 +83,7 @@ int main() {
         // Displays the first number of commonList
         std::cout << "The Lowest Common Multiple of " << userNum2Int << " and "
         << userNum1Int << " is "<< commonList.front() << "\n";
+    } else {
+        std::cout << "Enter a positive integer\n";
     }
 }
